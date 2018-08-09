@@ -9,10 +9,322 @@
 </head>
 <style>
 
+body {
+position:relative;
+   display:grid;
+   grid-template-rows: auto auto auto auto;
+}
+header {
+   position:fixed;
+   width:100%;
+   min-width:490px;
+   z-index:2;
+   min-height:5%;
+}
+#navbar {
+   width:100%;
+   height:100%;
+   background-color:hsl(100, 30%, 30%);
+   display:flex;
+   justify-content:space-between;
+}
+#navButtons {
+   display:flex;
+   padding-right:20px;
+}
+.navBtn {
+  color:lightgrey;
+  padding:5px 15px 5px 15px;
+   text-shadow: .5px 1px 3px black;
+   box-shadow:2px 0px 10px  black;
+   height:100%;
+   font-size: 22px;
+   font-family:Calibri;
+   margin-left:20px;
+
+}
+.navBtn:hover {
+   background-color:hsl(100, 30%, 60%);
+   color:lightblue;
+   box-shadow:0px 0px 4px 1px white;
+}
+a:link , a:hover , a {
+   text-decoration:none !important;
+}
+
+.main {
+   padding:20px;
+   min-width:490px;
+   display:block;
+   height:auto;
+}
+#welcome-section {
+   margin-top:40px;
+   height:100vh;
+   background-image: url("https://lh3.googleusercontent.com/nRYB9GG9vcJvKFB6q8ZGY2DYtIe3BB0zs3Ln132aQxHkXU1GiLKeUHdKELlD8BOB0pO1mqX9xA6vZWW9hM7B-xkBqM8t9x7mihqyvGSLA7h9uAIIzxsrHdsplfzz1D4DzNMVbvRlywN_PJevIRM1IVFw9nVax0yoCMRI6sWj0VE3eEKTF9yhSsE-zJRRAnVwHxI2xoOfuF7Dyz8D0WWZjeUVFQHFapW3HFaf6IVf9pK2FgtfVKMmwjk9d0294wGHo_qbqUxJsz0bkIu7-nhq1JLkYYx9iFhVws7js45RcO6tPuHRT-_MgU4zlKAuLtr5Ky9fz6yhW5kCWO0srGVwsyYCF7yIN1tL-CzPysFZa8L-VIl1zG0QeyLGFdg5JVdl6A-HTkNQQc5e5NXHJc9cltqFKTtuZuAeI8T9DkBOtYahRVs4ymuhsSntSvLJeycGo_f5gTa04VOp-0OV2sa2TKOdybQj7GSclw2UvrDtTacxMLoZ3KBuOn3CZ_vr4EXmYQYKlT9rWwDQVr8BVa0Ow-7IiaIxbJOsZWBcVzoSNrMvU490iC79wmQ3ZJa6cq8x869kHrY4K1E34javvJDSl5MiNG3HEBKPPeVDReiioxEf9KhYhuwSjbvHt4cBsu2XOuw8TNHiU7Zliie0gSJixxBmQsEk1Wey=w1080-h608-no");
+}
+#projects {
+  background-image: url("https://lh3.googleusercontent.com/2z54p4T2We7cDIQAcAneboKPSlCKR5RI-mmn8ly1S0r-fT96UaDNqFXELYmYPh_qn_4aNumk68ReiXmtC3-AEn-x-eP-eLnrDsWBQfIjG4ol5_fwHTQz2XdvwWKVY9fBzGnKoSHQ1SpyPGCBZBr4olBnFCRJPmaRvJhhUb3rNJXSs8-OoyW0mXdgPHAB6eunZhtR1r98QtTHPFE-HUm_pGG40fGS8SsYXiyRF44d11hzkvR0th8f3rwdMbqyueu_Q05lS3Kl82IKiOAT1MEdbATkpZ6UAG1pG7pJmKIwbox06-jhPOay3Guq1FJZ-m5RPoV1XAlHLd7x0FxtMLKPAqaBoSlx2Q9DXNGrCKVAy1lCKiOlNKhl7HaO_WyMmgek_PsNrUOoAPQJahNuJIcxj8-RyCm7pqomu-VT41mVKA9LoH8P9s83dNO1LZkpUv6x2fjCRMdj9oKpRTtIYEjq_iTya39l5Fy-AVZ0AdbB3iAIV-qWZbbgHZd4vS80Uz68Gson_4euQ6e-UT9Hd2uiDrJM05QY9S5eZb0O1Tw7T-kXsSTZhFpLUPgpGOUqIl4788Pwcc1Jilk56ZwDc-qXyaJrbxKUFSh5jG-OBGbr9h9pCf4hchIJV-chnk72aPz73tNOweJMo8W_QLnozqi1SZppqhuFaAcg=w1080-h608-no");
+}
+#about {
+   display:grid;
+   grid-template-columns: 1fr 1fr;
+   background-image: url("https://lh3.googleusercontent.com/OolPLd1IGLXJEUI9132J1_Xw2YWcGq-Y456ZW2wH30vwBejk7Kybi5EHVPQEFCmDDYxWRtsmoDGWhJTPbzZMSYh4yHAcnVJaODYpIbkQQqe2oQAk0IegH-CujO7tMhq2I3EBclUYxH_cxHFP-jGwna-qTS-P2NUH_h5kbMEKRTvRyQJ1RUyUPAEikwQqJhrDqgl_9VOLHvmnLBEnXbOjRVDjXPoWECbXAUTYVyA44WSTNKHGJNcuMBMeUDrgQL79h58xyl1mxyoK6DGpjh6DyaYl8Zr68U9K-ODJPzQ_P1B6fA5TSw1AP9VPeg0-NYS1rUaiGc4UbT0MKI66LqRjznMwbTpsSnVV8tLBlX6LaQaXtXrENUNAI8P6vGuCGKikY-v_nSsLAktvarwljjM3Tk0mTHDE3t8ERabeAFSJBDhnkoKwLJ50nmFTzfrUaRTqt72EP0fWlpV8QKCh_zY3R3QFXu-McNiXBI-a_Wk1D6KwIaQdRIirQSN6BOXAdTGOjQYcGmw4IhQLJR_fUqUuXUz6xbx-vaQLYBUKxb27mgzUATpLKOJfEdo4qNbIMblQAwnevgMJ4EoluoyMNgL1GW7yHoklTJni2AER3TgQqfDkr1CTKHV8TspeWmMtRLSGC7HNLLuFGbCEnG3q9u4jRogaZzNcCd0g=w1080-h608-no");
+}
+#contact {
+   display:grid;
+   grid-template-columns: 1fr 1fr;
+   justify-content:space-between;
+   background-image: url("https://lh3.googleusercontent.com/6ZWZHUtN13zNnlKcRoV8wWRlDPaj6cShPYUyF47ERshh473fgF584vasrDBTXrdUMkHcqwvTDYG1i8LzV86sguIF7VrVBdn6s0Z6kLdKLMyxa9MrKGYpIaTOG9f3zTGIwiM-iOaLNI04BjQk6cfmzVRxyYeSlZlDF6EG4S_Il857L_rMxUZ5jRM4uJPX7n-VUVRZx3xYqZgzI-7vPSaWxzBjdDLyfzRJnijrmmKEzlxTntbky1iHqQKsp7FoHVV2n1LdFPs328vV4CbuxLAFAqQMCPppEavLS0Ymwlg15ucRA-FOVKCUIAhsOJtsn3wIq7Rc_0u6rLSj3Aklxgmk7Ew6f_05xvDVQuhVxSvYiU5Q1Lnw0LVgdr7sNOqa-PosquKlaWyDDE6-GilAvBOvPaB8tTtPBbzr_Mkly7wA8fEUH4s4D6rLLIwH1OgebQdVBs8BfimUYmE1Oxte2EVGQ0oSc4j4W6EpvSjGZZRiWU6Cap_DsefOuRptE_BGHgOiQbKN8W_dOUPWiL-8DmGXQI2Q27WgefDl0xliV5Sedk0cZO2m8HxHqBIKvgch_uLtHUNmT7XnDpqZgrUbfsSL9sTeDKyyvFrK_pLwn5lgEVAODQy1y9XPBY3TwKAY1IBoXi4J6XtTnNi-9-9AXZwamRcXGO_oXtZo=w1080-h608-no");
+}
+.headerA{
+  font-family:Alegreya;
+  color:hsl(100, 30%, 20%);
+  font-size:9vmax;
+  text-shadow: 4px 4px 10px rgb(0,0,0), 2px 2px 25px rgb(0,0,0), 2px 0px 0px rgb(0,0,0);
+  position:relative;
+  left:4vmax;
+  top:10vh;
+}
+.headerB {
+   font-family:Alegreya;
+   font-size:8vmax;
+   text-shadow: 2px 2px 7px rgb(0,0,0), 2px 2px 15px rgb(0,0,0), 1px 0px 0px rgb(0,0,0);
+   position:relative;
+   top:8vh;
+   left:4vw;
+   opacity:.8;
+
+}
+#info-container {
+   position:relative;
+   display:flex;
+   color:rgb(90,90,90);
+   text-shadow: 1px 1px 1px black;
+   opacity:.8;
+   top:2vh;
+   justify-content:space-between;
+   align-items:center;
+   margin:10px;
+}
+.buttonspace , .buttonspace2 {
+   border-radius:2px;
+   background-color:rgb(90,90,90);
+   color:white;
+   width:auto;
+   height:auto;
+   font-size:1.5vmax;
+   box-shadow:0px 3px 6px black;
+   margin-top:15px;
+}
+.buttonspace:hover {
+   background-color:lightgrey;
+   color:black;
+   box-shadow: 0px 0px 3px white;
+}
+#smBtns {
+   display:grid;
+   margin-top:4%;
+}
+.carousel {
+   background-color:hsl(100, 30%, 20%);
+   box-shadow:0px 7px 20px #000;
+   padding:10px;
+   min-height:200px;
+}
+.boxshape {
+   background-color:hsl(100, 30%, 20%);
+   padding:15px 0px 15px 0px;
+   box-shadow:0px 7px 20px #000;
+   min-width:20%;
+   min-height:200px;
+   margin-right:1px;
+
+}
+#boxcar1, #boxcar2 {
+   display:grid;
+   grid-template-rows: auto auto;
+   min-height:180px;
+}
+#box1grid, #box2grid {
+   background-color:hsl(100, 30%, 50%);
+   width:80%;
+   margin:auto;
+   height:90%;
+   min-height:80px;
+   border-radius:2px;
+   overflow: scroll;
+   font-size:1.4vmax;
 
 
+}
+#projects {
+   display:grid;
+   grid-template-rows: auto auto;
+   padding-top:50px;
+   margin-top:auto;
+
+}
+#projectsRow1 {
+   display:flex;
+   margin-right:15px;
+   color:grey;
+   margin-bottom:30px;
+}
+#projectsRow2 {
+   display:flex;
+   margin-right:15px;
+   color:grey;
+}
+.captext {
+   font-size:1.5vmax;
+   margin-left: 20%;
+   text-shadow:0px 1px 3px black;
+   color:lightgrey;
+}
+.captext2 {
+   margin-left:-5%;
+   font-size: 1.5vmax;
+   color:white;
+}
+#box1grid::-webkit-scrollbar {
+  display:none; }
+
+li {
+   margin-left:-15px;
+   padding:5px;
+}
+#box2grid::-webkit-scrollbar {
+display:none;    }
+
+#aboutmeH {
+   margin-top:-50px;
+   font-size:7vmin !important;
+}
+#amcol1 {
+   display:grid;
+   grid-template-rows: 1fr 3fr;
+}
+#bio {
+   margin:auto;
+   margin: -50px 30px 0 30px;
+   padding-top:30px;
+}
+#education {
+   margin:0px 10px 0px 10px;
+}
+#contactInfo {
+   padding:20px;
+}
+.inputfield {
+  height:30px;
+  width:auto;
+  border-style:solid;
+  border-width:.5px;
+  border-color:grey;
+  border-radius:2px;
+  padding:5px;
+   color:black;
+}
+#textarea {
+   max-width:210px;
+   max-height:200px;
+   border-radius: 4px;
+}
+
+
+
+@media only screen and (max-width:700px) {
+   #header {
+      width:101vmax;
+      top:47vmax;
+      margin-left:-47.8vmax;
+   }
+   #navbar {
+      transform: rotate(90deg);
+      padding-right:5px;
+
+   }
+
+   #welcome-section {
+      margin-top:0px;
+   }
+   .main {
+      margin-left:30px;
+      min-width:358px;
+   }
+   #info-container {
+      display:grid;
+      margin-top:30px;
+      margin-left:10px;
+   }
+   .buttonspace {
+    font-size:4vmax;
+   }
+   .buttonspace2 {
+      font-size:2.5vmax !important;
+   }
+   #ul {
+      font-size: 3vmax !important;
+   }
+   li {
+      padding:5px;
+   }
+   #smBtns {
+      margin-left:20%;
+      margin-top:0px;
+   }
+   .captext {
+   font-size:2vmin;
+   margin-left:20%;
+   text-shadow:0px 1px 3px black;
+
+}
+   .captext2 {
+   margin-left:-55%;
+   font-size: 1.1vmin;
+    text-shadow: 0px 1px 2px black;
+}
+   #box1grid, #box2grid {
+   width:80%;
+   margin:auto;
+   height:80%;
+   min-height:80px;
+
+   }
+   .boxshape {
+      max-height:100%;
+   }
+   #contact {
+      display:grid;
+      grid-template-columns: auto;
+
+   }
+   #contactInfo{
+      margin-
+   }
+   #contactC {
+      margin-left:-20px;
+      padding:30px;
+   }
+   .inputfield {
+      display:block;
+      width:53%;
+
+   }
+   #textarea{
+      display:block;
+      width:100%;
+   }
 
 </style>
+
+<script>
+
+
+
+</script>
+
 <header id="header">
    <nav id="navbar">
       <div id="namebar">
